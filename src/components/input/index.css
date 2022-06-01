@@ -1,0 +1,35 @@
+:root{
+  --font:#fff;
+  --border:rgb(66, 66, 66);
+}
+.addList{
+  display: flex;
+  position: relative;
+}
+.addList>input{
+  padding: 0 10px;
+  height: 45px;
+  border-radius: 5px;
+  border: 2px solid var(--border);
+  caret-color: #000;
+  font-size: 14px;
+}
+.addList>input:focus{
+  border: 2px solid #000;
+  outline: none;
+}
+.addList>input:hover{
+  border: 2px solid #000;
+}
+.addList>img{
+  width: 30px;
+  cursor: pointer;
+  background-color: rgb(171 171 171 / 86%);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 5px;
+}
+.addList>img:hover{
+  background-color: rgb(171 171 171);
+}

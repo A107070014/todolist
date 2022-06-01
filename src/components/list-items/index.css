@@ -1,0 +1,19 @@
+:root{
+    --font:#fff;
+    --border:rgb(66, 66, 66);
+}
+
+.list-items>li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    border: 2px solid var(--font);
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+}
+.list-items>li>div>input,.list-items>li>div>img{
+    margin: 0 5px;
+    cursor: pointer;
+}

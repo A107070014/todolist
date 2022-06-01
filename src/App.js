@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Input from './components/input';
+import ListTab from './components/list-tab'; 
+import ListItems from './components/list-items'; 
+import Edit from './components/edit-modal'; 
+import { useState } from 'react';
 
-function App() {
+
+export default function Todolist() {
+  
+  const [itemArray,setItemArray] = useState([]);
+  function addItem(item) {
+    setItemArray(preItem=>[...preItem,item]);
+  }
+
+  function deleteData(data){
+    const newItemArray = itemArray.filter(e => e !== data);
+    setItemArray(newItemArray);
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <>
+    <div className="todolist">
+      <h1>ToDoList</h1>
+      <Input
+        addItem={addItem}
+      />
+      <div className='list'>
+        <ListTab/>
+        <ListItems
+          itemArray={itemArray}
+          deleteData={deleteData}
+        />
+      </div>
     </div>
+    <div className='modal'>
+      <Edit/>
+    </div>
+  </>
   );
 }
 
-export default App;

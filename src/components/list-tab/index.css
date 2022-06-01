@@ -1,0 +1,31 @@
+:root{
+    --font:#fff;
+    --border:rgb(66, 66, 66);
+}
+.list{
+    color: var(--font);
+}
+.list-tab{
+    display: flex;
+}
+.list-tab>li{
+    list-style-type: none;
+    flex: 1;
+    width: 100%;
+}
+.list-tab>li>button{
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-tab>li>button>span{
+    color: var(--font);
+    font-weight: bold;
+    margin: 0 8px;
+}
