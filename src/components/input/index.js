@@ -5,8 +5,12 @@ import { useState } from 'react';
 export default function Input({addItem}) {
   const [value,setValue] = useState();
   function add() {
-    setValue('');
-    addItem(value);
+    if(value === ''){
+      alert('請輸入代辦事項');
+    }else{
+      setValue('');
+      addItem({value,status:false});
+    }
   }
   return (
     <div className='addList'>   

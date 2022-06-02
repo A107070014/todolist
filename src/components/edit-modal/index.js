@@ -1,21 +1,17 @@
 import { useState } from 'react';
 import './index.css';
 
-export default function Edit({editItem,editSave,editClose,display}) {
-  const [editValue,setEditValue] = useState(editItem)
-  function editItemFunc(){
-    editSave(editValue);
-  }
-  function closeItemFunc(){
-    editClose(display);
-  }
+export default function Edit({editItem,editSave,editClose}) {
+  const [editValue,setEditValue] = useState(editItem);
+  
   return (
     <div className='editModal'>
-        <h1>重新命名<span>{editItem}</span>事項</h1>
-        <input type='text' value={editValue} placeholder={editItem} onChange={e=>setEditValue(e.target.value)}/>
-        <div>
-          <div onClick={editItemFunc}>儲存</div>
-          <div onClick={closeItemFunc}>取消</div>
+        <h1>重新命名</h1>
+        <span>將'{editItem}'更改為</span>
+        <input type='text' value={editValue} placeholder='重新命名代辦事項...'  onChange={e=>setEditValue(e.target.value)}/>
+        <div className='btn'>
+          <div onClick={editClose}>取消</div>
+          <div onClick={()=>editSave(editValue)}>儲存</div>
         </div>
     </div>
   );

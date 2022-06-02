@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 export default function Todolist() {
   
-  let [itemArray,setItemArray] = useState([]);
+  const [itemArray,setItemArray] = useState([]);
   const [editItem,setEditItem] = useState();
   const [editIndex,setEditIndex] = useState();
   const [display,setDisplay] = useState(false);
@@ -28,17 +28,28 @@ export default function Todolist() {
     setEditIndex(index);
     setDisplay(!display);
   }
-
   //編輯完取值
   function editSave(editValue){
-    itemArray[editIndex] = editValue;
-    setItemArray(itemArray);
+    setItemArray(preItem => (
+      preItem.map((data,idx) => (
+        idx === editIndex ? {...data,value:editValue} : data
+      ))
+    ))
     setDisplay(!display);
   }
 
-  function editClose(display){
+  function editClose(){
     setDisplay(!display);
   }
+
+  function completed(index){
+    setItemArray( preItem => (
+      preItem.map( (data,idx) => (
+        idx ===  index ? {...data,status:!data.status}: data
+      ))
+    ))
+  }
+
   return (
   <>
     <div className="todolist">
@@ -52,7 +63,7 @@ export default function Todolist() {
           itemArray={itemArray}
           deleteData={deleteData}
           editData={editData}
-          
+          completed={completed}
         />
       </div>
     </div>
@@ -61,7 +72,6 @@ export default function Todolist() {
         editItem={editItem}
         editSave={editSave}
         editClose={editClose}
-        display={display}
       />
     </div>}
   </>
