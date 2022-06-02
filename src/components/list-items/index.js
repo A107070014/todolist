@@ -2,7 +2,7 @@ import './index.css';
 import edit from '../../img/pencil.png';
 import trash from '../../img/delete.png';
 
-export default function ListItems({itemArray,deleteData}) {
+export default function ListItems({itemArray,deleteData,editData}) {
 
   return (
     <ul className='list-items'>
@@ -13,7 +13,7 @@ export default function ListItems({itemArray,deleteData}) {
                     <span>{data}</span>
                 </div>
                 <div>
-                    <img src={edit} alt='edit' width={20}/>
+                    <img src={edit} alt='edit' width={20} onClick={()=>editData(data,index)}/>
                     <img src={trash} alt='trash' width={20} onClick={()=>deleteData(data)}/>
                 </div>
             </li>
