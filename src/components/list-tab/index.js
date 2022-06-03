@@ -4,28 +4,22 @@ import clock from '../../img/clock.png';
 import select from '../../img/select.png';
 
 
-export default function ListTab() {
-  
+export default function ListTab({setActive}) {
+    const tab = [
+        {img:all,title:'All'},
+        {img:clock,title:'Pending'},
+        {img:select,title:'Completed'},
+    ];
   return (
         <ul className='list-tab'>
-            <li>
-                <button>
-                    <img src={all} alt='all' width={20}/>
-                    <span>All</span>
-                </button>
-            </li>
-            <li>
-                <button>
-                    <img src={clock} alt='pending' width={20}/>
-                    <span>Pending</span>
-                </button>
-            </li>
-            <li>
-                <button>
-                    <img src={select} alt='completed' width={20}/>
-                    <span>Completed</span>
-                </button>
-            </li>
+            {tab.map((data,index) => (
+                <li onClick={()=>setActive(index)}>
+                    <button >
+                        <img src={data.img} alt={data.title} width={20}/>
+                        <span>{data.title}</span>
+                    </button>
+                </li>
+            ))}
         </ul>
   );
 }

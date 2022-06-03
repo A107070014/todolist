@@ -12,7 +12,10 @@ export default function Todolist() {
   const [editItem,setEditItem] = useState();
   const [editIndex,setEditIndex] = useState();
   const [display,setDisplay] = useState(false);
+  const [active,setActive] = useState(0);
 
+  
+  
   function addItem(item) {
     setItemArray(preItem=>[...preItem,item]);
   }
@@ -23,16 +26,16 @@ export default function Todolist() {
   }
 
   //按編輯扭取值
-  function editData(data,index){
-    setEditItem(data);
-    setEditIndex(index);
+  function editData(data){
+    setEditItem(data.value);
+    setEditIndex(data.id);
     setDisplay(!display);
   }
   //編輯完取值
   function editSave(editValue){
     setItemArray(preItem => (
-      preItem.map((data,idx) => (
-        idx === editIndex ? {...data,value:editValue} : data
+      preItem.map((data) => (
+        data.id === editIndex ? {...data,value:editValue} : data
       ))
     ))
     setDisplay(!display);
@@ -49,7 +52,7 @@ export default function Todolist() {
       ))
     ))
   }
-
+  
   return (
   <>
     <div className="todolist">
@@ -58,11 +61,14 @@ export default function Todolist() {
         addItem={addItem}
       />
       <div className='list'>
-        <ListTab/>
+        <ListTab
+          setActive={setActive}
+        />
         <ListItems
-          itemArray={itemArray}
+          active={active}
           deleteData={deleteData}
           editData={editData}
+          itemArray={itemArray}
           completed={completed}
         />
       </div>

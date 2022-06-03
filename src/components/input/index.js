@@ -8,8 +8,10 @@ export default function Input({addItem}) {
     if(value === ''){
       alert('請輸入代辦事項');
     }else{
+      const id = new Date();
+      console.log(id);
       setValue('');
-      addItem({value,status:false});
+      addItem({id,value,status:false});
     }
   }
   return (
