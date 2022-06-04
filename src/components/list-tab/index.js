@@ -14,8 +14,8 @@ export default function ListTab({active,setActive}) {
   return (
     <ul className='list-tab'>
         {tab.map((data,index) => (
-            <li onClick={()=>setActive(index)}>
-                <button className={active === index && "active"}>
+            <li onClick={()=>setActive(index)} >
+                <button id={active === index && "active"}>
                     <img src={data.img} alt={data.title} width={20}/>
                     <span>{data.title}</span>
                 </button>
