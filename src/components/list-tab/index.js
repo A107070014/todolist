@@ -12,20 +12,16 @@ export default function ListTab({active,setActive}) {
     ];
 
   return (
-        <ul className='list-tab'>
-            {tab.map((data,index) => (
-<<<<<<< HEAD
-                <li onClick={()=>setActive(index)} >
-=======
-                <li onClick={()=>setActive(index)}>
->>>>>>> eddf8b37990f0bad9e427d871cb9761c3bdf791f
-                    <button className={active === index && "active"}>
-                        <img src={data.img} alt={data.title} width={20}/>
-                        <span>{data.title}</span>
-                    </button>
-                </li>
-            ))}
-        </ul>
+    <ul className='list-tab'>
+        {tab.map((data,index) => (
+            <li onClick={()=>setActive(index)}>
+                <button className={active === index && "active"}>
+                    <img src={data.img} alt={data.title} width={20}/>
+                    <span>{data.title}</span>
+                </button>
+            </li>
+        ))}
+    </ul>
   );
 }
 
