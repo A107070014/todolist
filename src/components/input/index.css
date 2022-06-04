@@ -38,14 +38,15 @@
 }
 .alert{
   margin: 5px 0 10px 0 ;
-  color: rgb(186, 7, 7);
+  color: rgb(189, 16, 16);
   display: flex;
 }
 .alert>svg{
-  fill: rgb(186, 7, 7);
+  fill: rgb(189, 16, 16);
 }
 .alert>span{
   margin: 0 5px;
+  font-weight: bold;
 }
 @media (max-width:768px){
   .addList>input{

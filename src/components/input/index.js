@@ -21,7 +21,7 @@ export default function Input({addItem}) {
     <div className='addList'>   
         <input id='list' type='text' name='item' size='100' placeholder='加入新的代辦事項...' value={value} 
           onChange={(e) => setValue(e.target.value)}
-          style={{border:alert && '1px solid red'}}
+          style={{border:alert && '2px solid rgb(189, 16, 16)'}}
         />
         <Plus onClick={add}/>
     </div>
