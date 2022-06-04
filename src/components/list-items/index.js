@@ -1,6 +1,6 @@
 import './index.css';
-import edit from '../../img/pencil.png';
-import trash from '../../img/delete.png';
+import { ReactComponent as Edit}  from '../../img/pencil.svg';
+import { ReactComponent as Trash}  from '../../img/delete.svg';
 import { useState,useEffect } from 'react';
 
 export default function ListItems({active,deleteData,editData,completed,itemArray}) {
@@ -22,12 +22,12 @@ export default function ListItems({active,deleteData,editData,completed,itemArra
         {activeArray.map((data,index)=> (
             <li key={index} style={{textDecoration:data.status && 'line-through'}}>
                 <div>
-                    <input type='checkbox' onClick={()=>completed(index)} checked={data.status}/>
+                    <input type='checkbox' onClick={()=>completed(data.id)} checked={data.status}/>
                     <span>{data.value}</span>
                 </div>
                 <div>
-                    <img src={edit} alt='edit' width={20} onClick={()=>editData(data)}/>
-                    <img src={trash} alt='trash' width={20} onClick={()=>deleteData(data)}/>
+                    <Edit onClick={()=>editData(data)}/>
+                    <Trash onClick={()=>deleteData(data)}/>
                 </div>
             </li>
             

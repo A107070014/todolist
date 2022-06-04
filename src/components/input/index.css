@@ -21,7 +21,7 @@
 .addList>input:hover{
   border: 2px solid #000;
 }
-.addList>img{
+.addList>svg{
   width: 30px;
   cursor: pointer;
   background-color: rgb(171 171 171 / 86%);
@@ -30,6 +30,9 @@
   top: 10px;
   border-radius: 5px;
 }
-.addList>img:hover{
+.addList>svg>path{
+  fill: white;
+}
+.addList>svg:hover{
   background-color: rgb(171 171 171);
 }

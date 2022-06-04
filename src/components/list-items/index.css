@@ -13,7 +13,15 @@
     margin: 10px 0;
     padding: 10px;
 }
-.list-items>li>div>input,.list-items>li>div>img{
+.list-items>li>div>input,.list-items>li>div>svg{
     margin: 0 5px;
     cursor: pointer;
+}
+.list-items>li>div>svg{
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+.list-items>li>div>svg:hover{
+    fill: #000000;
 }

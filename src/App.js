@@ -45,10 +45,10 @@ export default function Todolist() {
     setDisplay(!display);
   }
 
-  function completed(index){
+  function completed(id){
     setItemArray( preItem => (
-      preItem.map( (data,idx) => (
-        idx ===  index ? {...data,status:!data.status}: data
+      preItem.map( (data) => (
+        data.id ===  id ? {...data,status:!data.status}: data
       ))
     ))
   }
@@ -63,6 +63,7 @@ export default function Todolist() {
       <div className='list'>
         <ListTab
           setActive={setActive}
+          active={active}
         />
         <ListItems
           active={active}
