@@ -24,6 +24,7 @@
     align-items: center;
 }
 .active,.list-tab>li>button:hover{
+    border-radius: 5px;
     background-color: #545454;
     background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
