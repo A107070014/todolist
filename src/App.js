@@ -10,16 +10,17 @@ export default function Todolist() {
   
   const [itemArray,setItemArray] = useState([]);
   const [editItem,setEditItem] = useState();
-  const [editIndex,setEditIndex] = useState();
+  const [editIndex,setEditIndex] = useState(); //編輯
   const [display,setDisplay] = useState(false);
   const [active,setActive] = useState(0);
 
   
-  
+  //新增todolist
   function addItem(item) {
     setItemArray(preItem=>[...preItem,item]);
   }
 
+  //刪除todolist
   function deleteData(data){
     const newItemArray = itemArray.filter(e => e !== data);
     setItemArray(newItemArray);
@@ -40,11 +41,12 @@ export default function Todolist() {
     ))
     setDisplay(!display);
   }
-
+  //取消編輯
   function editClose(){
     setDisplay(!display);
   }
 
+  //勾選完成
   function completed(id){
     setItemArray( preItem => (
       preItem.map( (data) => (

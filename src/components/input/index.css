@@ -36,7 +36,17 @@
 .addList>svg:hover{
   background-color: rgb(171 171 171);
 }
-
+.alert{
+  margin: 5px 0 10px 0 ;
+  color: rgb(186, 7, 7);
+  display: flex;
+}
+.alert>svg{
+  fill: rgb(186, 7, 7);
+}
+.alert>span{
+  margin: 0 5px;
+}
 @media (max-width:768px){
   .addList>input{
     width: 100%;

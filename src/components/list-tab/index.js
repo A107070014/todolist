@@ -5,7 +5,6 @@ import select from '../../img/select.png';
 
 
 export default function ListTab({active,setActive}) {
-    console.log(active);
     const tab = [
         {img:all,title:'All'},
         {img:clock,title:'Pending'},
