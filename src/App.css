@@ -1,7 +1,6 @@
 *{
   border:0 auto;
   padding:0;
-  margin: 0;
 }
 :root{
   --font:#fff;
@@ -34,4 +33,10 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width:768px){
+  .todolist{
+    padding: 0 10%;
+  }
 }

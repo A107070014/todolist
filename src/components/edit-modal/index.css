@@ -58,3 +58,13 @@
   background-color: rgb(171 171 171);
   border: 1px solid #000;
 }
+@media (max-width:435px){
+    .editModal{
+      width: 90%;
+    }
+}
+@media (min-width:435px) and (max-width:547px){
+    .editModal{
+      width: 90%;
+    }
+}
